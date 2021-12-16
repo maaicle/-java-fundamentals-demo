@@ -5,7 +5,8 @@ public class Tool {
     private int durability;
 
     public enum ToolType {
-        STARSHIP_REPAIR
+        STARSHIP_REPAIR,
+        RIFLE
     }
 
     public Tool(ToolType toolType) {

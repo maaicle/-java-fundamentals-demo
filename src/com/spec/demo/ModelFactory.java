@@ -6,14 +6,14 @@ public class ModelFactory {
     //nested classes need to be fully qualified when used.
     public enum ModelType {
         ASTROMECH,
-        SEEKER,
+        PROTOCOL,
         BATTLE
 
     }
 
     static Map<ModelType, Model> modelMap = Map.of(
             ModelType.ASTROMECH, new Model ("Astromech", "Starship repair/support"),
-            ModelType.SEEKER, new Model ("Seeker", "Seeks things"),
+            ModelType.PROTOCOL, new Model ("Prtotocol", "Glorified Translater"),
             ModelType.BATTLE, new Model ("Battle", "To terminate")
     );
 
