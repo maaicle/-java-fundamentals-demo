@@ -6,10 +6,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class Droid {
+public abstract class Droid {
     private final String serial;
     private final Model model;
-    private final List<Tool> tools;
+    //Needs to be protected for sub-class to use.
+    protected final List<Tool> tools;
+
 
     //Constructor
     public Droid(String serial, Model model, List<Tool> tools) {
@@ -48,25 +50,6 @@ public class Droid {
 
     public String speak(String phrase) {
         return phrase;
-    }
-
-    //Repair Starship
-    public void repairStarship() {
-        //I copied this from the solution file, but I can explain what's happening. The type for the variable is the interface Optional. This allows us to safely
-        //return a value because if it's missing the app won't crash, it will just return Optional.empty.
-        //.stream() makes a stream of the tools list. .filter uses a lambda expression to find and return all of the STARSHIP_REPAIR tools that have at least one durability
-        // in the list. Finally, findFirst() is a stream method that returns the first instance of our filtered list. Neat stuff.
-        Optional<Tool> repairToolOptional = tools.stream().filter(tool -> tool.getToolType().equals(Tool.ToolType.STARSHIP_REPAIR) && tool.getDurability() >= 1).findFirst();
-        if (repairToolOptional.isPresent()) {
-            Tool repairTool = repairToolOptional.get();
-            repairTool.useTool();
-            System.out.println("The starship is repaired");
-            if (repairTool.getDurability() <= 0) {
-                tools.remove(repairTool);
-            }
-        }
-        else
-            System.out.println("You aint got no tools for this job.");
     }
 
 }

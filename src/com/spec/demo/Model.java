@@ -1,7 +1,7 @@
 package com.spec.demo;
 
 public class Model {
-    //!!!!!! These cannot be static! I spent a couple hours trying to figure out why my models always returned the values of the last instanciation of Model. Because they were static!
+    //!!!!!! These cannot be static! I spent a couple of hours trying to figure out why my models always returned the values of the last instantiation of Model. Because they were static!
     private final String type;
     private final String purpose;
 
