@@ -3,7 +3,7 @@ package com.spec.demo;
 import java.util.List;
 import java.util.Optional;
 
-public class AstromechDroid extends Droid {
+public class AstromechDroid extends Droid implements Defender{
 
     public AstromechDroid(String serial, Model model, List<Tool> tools) {
         super(serial, model, tools);
